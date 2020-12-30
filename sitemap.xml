@@ -4,22 +4,77 @@
   
   <url>
     <loc>https://fauzanjantung.github.io/</loc>
-    <lastmod>2020-11-26T21:05:20+07:00</lastmod>
+    <lastmod>2020-12-30T15:21:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fauzanjantung.github.io/posts/portfolio/</loc>
-    <lastmod>2020-11-26T21:05:20+07:00</lastmod>
+    <loc>https://fauzanjantung.github.io/posts/others/</loc>
+    <lastmod>2020-12-30T15:21:28+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://fauzanjantung.github.io/posts/</loc>
+    <lastmod>2020-12-30T15:21:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/as-web-developer/</loc>
+    <lastmod>2020-12-30T15:21:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/as-quality-assurance/</loc>
     <lastmod>2020-11-26T21:05:20+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://fauzanjantung.github.io/about/</loc>
     <lastmod>2020-11-26T21:04:19+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/as-chatbot-developer/</loc>
+    <lastmod>2020-11-25T21:05:20+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/portfolio/</loc>
+    <lastmod>2020-11-24T21:05:20+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/tutorial-penggunaan-katalon-studio-untuk-project-web-api/</loc>
+    <lastmod>2020-05-07T11:45:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/localization-dengan-mudah-di-laravel/</loc>
+    <lastmod>2020-05-07T11:34:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/desktop-test-automation-menggunakan-seeshell/</loc>
+    <lastmod>2020-04-17T03:01:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/mobile-test-automation-cucumber-bdd-di-katalon/</loc>
+    <lastmod>2019-09-03T22:59:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/mencari-akun-sosmed-menggunakan-sherlock/</loc>
+    <lastmod>2019-08-19T02:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/steganografi-menggunakan-steghide/</loc>
+    <lastmod>2019-08-12T07:48:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/</loc>
+    <lastmod>2019-08-09T02:12:30+00:00</lastmod>
   </url>
   
   <url>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://fauzanjantung.github.io/css/frameworks.css" />
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://fauzanjantung.github.io/css/github.css" />
+    
+    <link crossorigin="anonymous" media="(prefers-color-scheme: dark)" rel="stylesheet"
+        href="https://fauzanjantung.github.io/css/dark.css" />
+    
+    <meta name="viewport" content="width=device-width">
+    <meta name="description"
+        content="Selamat pagi/siang/sore/malam teman. Semoga kalian sehat dan sukses selalu. Saya ucapkan selamat datang. Mungkin beberapa dari kalian sudah tahu apa itu Device Farm, dan mungkin beberapa dari kalian juga belum tahu apa itu Device Farm, jadi mari kita belajar bersama-sama.
+Disini saya mengacu ke tulisan di https://tech.mercari.com. Tulisan disana keren-keren. Jika ilmu ibarat ikan, maka https://tech.mercari.com ibarat sungai. Kita bisa mendapatkan banyak ikan disana.
+Mercari Engineering Blog
+_We&amp;rsquo;re the software engineers behind Mercari." />
+    <meta name="keywords"
+        content="blog, google analytics" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/" />
+
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mendirikan Device Farm Menggunakan OpenSTF - Fauzan Fathurrahman" />
+    <meta name="twitter:description"
+        content="Selamat pagi/siang/sore/malam teman. Semoga kalian sehat dan sukses selalu. Saya ucapkan selamat datang. Mungkin beberapa dari kalian sudah tahu apa itu Device Farm, dan mungkin beberapa dari kalian juga belum tahu apa itu Device Farm, jadi mari kita belajar bersama-sama.
+Disini saya mengacu ke tulisan di https://tech.mercari.com. Tulisan disana keren-keren. Jika ilmu ibarat ikan, maka https://tech.mercari.com ibarat sungai. Kita bisa mendapatkan banyak ikan disana.
+Mercari Engineering Blog
+_We&amp;rsquo;re the software engineers behind Mercari." />
+    <meta name="twitter:site" content="https://fauzanjantung.github.io/" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:image"
+        content="https://fauzanjantung.github.io/">
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mendirikan Device Farm Menggunakan OpenSTF - Fauzan Fathurrahman">
+    <meta property="og:description"
+        content="Selamat pagi/siang/sore/malam teman. Semoga kalian sehat dan sukses selalu. Saya ucapkan selamat datang. Mungkin beberapa dari kalian sudah tahu apa itu Device Farm, dan mungkin beberapa dari kalian juga belum tahu apa itu Device Farm, jadi mari kita belajar bersama-sama.
+Disini saya mengacu ke tulisan di https://tech.mercari.com. Tulisan disana keren-keren. Jika ilmu ibarat ikan, maka https://tech.mercari.com ibarat sungai. Kita bisa mendapatkan banyak ikan disana.
+Mercari Engineering Blog
+_We&amp;rsquo;re the software engineers behind Mercari." />
+    <meta property="og:url" content="https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/" />
+    <meta property="og:site_name" content="Mendirikan Device Farm Menggunakan OpenSTF" />
+    <meta property="og:image"
+        content="https://fauzanjantung.github.io/">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1024">
+    
+    <meta property="article:published_time" content="2019-08-09 02:12:30.057 &#43;0000 UTC" />
+    
+
+    
+    
+
+    
+    
+
+    <title>Mendirikan Device Farm Menggunakan OpenSTF - Fauzan Fathurrahman</title>
+
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://fauzanjantung.github.io/images/favicon.ico">
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+    
+    
+</head>
+
+<body class="env-production emoji-size-boost page-responsive page-profile">
+  <div class="position-relative js-header-wrapper ">
+    <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+    </span>
+    <header class="Header py-lg-0 js-details-container Details flex-wrap flex-lg-nowrap p-responsive" role="banner">
+        <div class="Header-item d-none d-lg-flex">
+            <a class="Header-link" href="https://fauzanjantung.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div
+            class="Header-item Header-item--full flex-column flex-lg-row width-full flex-order-2 flex-lg-order-none mr-0 mr-lg-3 mt-3 mt-lg-0 Details-content--hidden">
+            <div class="header-search flex-self-stretch flex-lg-self-auto mr-0 mr-lg-3 mb-3 mb-lg-0 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+                role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox"
+                aria-expanded="false">
+                <div class="position-relative">
+                </div>
+            </div>
+        </div>
+        <nav class="d-flex" aria-label="Global">
+            <a class="js-selected-navigation-item Header-link py-lg-3">&nbsp;</a>
+        </nav>
+        <div class="Header-item Header-item--full flex-justify-center d-lg-none position-relative" style="margin-right: auto;">
+            <a class="Header-link" href="https://fauzanjantung.github.io/" aria-label="Homepage"
+                data-ga-click="Header, go to dashboard, icon:logo">
+                <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+                    width="32" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+        </div>
+        <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+            <details class="details-overlay details-reset">
+                <summary class="Header-link" aria-label="View profile and more"
+                    data-ga-click="Header, show menu, icon:avatar">
+                    
+                    <img alt="" class="avatar" src="https://fauzanjantung.github.io/images/avatar.png" height="20" width="20">
+                    
+                </summary>
+            </details>
+        </div>
+    </header>
+</div>
+
+<div id="start-of-content" class="show-on-focus"></div>
+<div id="js-flash-container">
+</div>
+
+  
+<div class="application-main " data-commit-hovercards-enabled="">
+    <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+        <main>
+            <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-4 ">
+                <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+                    <div class="mb-3 d-flex">
+                        <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
+                            <a class="avatar mr-1" href="https://fauzanjantung.github.io/about/">
+                                
+
+                                <img src="https://fauzanjantung.github.io/images/avatar.png" width="26" height="26">
+                                
+                            </a>
+                            <span class="author"><a href="https://fauzanjantung.github.io/">Fauzan Fathurrahman</a></span>
+                            <span class="path-divider">/</span>
+                            <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
+                                    href="https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/">Mendirikan Device Farm Menggunakan OpenSTF</a></strong>
+
+                            <div class="d-block text-small text-gray">
+                                Created <time-ago datetime="2019-08-09" class="no-wrap"
+                                    title="Created at 2019/08/09">
+                                    2019-08-09</time-ago>
+                                <span class="file-info-divider"></span>
+                                Modified <time-ago datetime="2019-08-09" class="no-wrap"
+                                    title="Modified  at 2019/08/09">
+                                    2019-08-09</time-ago>
+                            </div>
+                        </h1>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
+                <div class="repository-content ">
+                    <div class="Box mt-3 position-relative">
+                        <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
+                            <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                                1262 Words
+                                
+                            </div>
+                        </div>
+
+                        <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p>Selamat pagi/siang/sore/malam teman. Semoga kalian sehat dan sukses selalu. Saya ucapkan selamat datang. Mungkin beberapa dari kalian sudah tahu apa itu Device Farm, dan mungkin beberapa dari kalian juga belum tahu apa itu Device Farm, jadi mari kita belajar bersama-sama.</p>
+<p>Disini saya mengacu ke tulisan di <a href="https://tech.mercari.com">https://tech.mercari.com</a>. Tulisan disana keren-keren. Jika ilmu ibarat ikan, maka <a href="https://tech.mercari.com">https://tech.mercari.com</a> ibarat sungai. Kita bisa mendapatkan banyak ikan disana.</p>
+<p><a href="https://tech.mercari.com" title="https://tech.mercari.com"><strong>Mercari Engineering Blog</strong><br>
+_We&rsquo;re the software engineers behind Mercari. Check out our blog to see the tech that powers our marketplace._tech.mercari.com</a><a href="https://tech.mercari.com"></a></p>
+<h3 id="apa-itu-devicefarm">Apa itu Device Farm?</h3>
+<p>Kalau menurut bahasa, Device Farm berarti sebuah tempat/peternakan/perkebunan perangkat. Sama seperti Animal Farm, tetapi isinya adalah perangkat. Jadi bisa anda bayangkan sebuah tempat, yang berfungsi untuk menyimpan dan memelihara device kita.</p>
+<h3 id="kenapa-menggunakan-devicefarm">Kenapa menggunakan Device Farm?</h3>
+<p>Membuat aplikasi mobile yang berkualitas tinggi itu sulit, jangan diremehkan. Apalagi di bumi ini terdapat banyak variasi jenis-jenis mobile device dan sistem operasinya. Inilah yang menjadi tantangan untuk para pengembang aplikasi mobile. Salah satu cara untuk menjamin kualitas aplikasi mobile yaitu dengan mengetes aplikasi tersebut di berbagai variasi jenis mobile device. Sebab itu kita harus mempunyai beberapa variasi mobile device. Namun, bagaimana cara kita memelihara mereka semua? Tentu pasti sulit untuk mengelola semua mobile device tersebut. Solusinya adalah kita membuat sebuah sistem yang dimana semua mobile device tersebut terhubung dan bisa kita akses secara remote. Nah, OpenSTF adalah alat satu-satunya tools yang open-source yang bisa membantu kita mendirikan sistem tersebut.</p>
+<h3 id="pengenalan-openstf">Pengenalan OpenSTF</h3>
+<p><strong>STF</strong> (atau Smartphone Test Farm) adalah sebuah aplikasi web untuk memantau, mengetes dan men-debug mobile device, smartwatch atau gadget lain secara remote, cukup diakses dari browser.</p>
+<p>Di STF juga terdapat beberapa fitur yang keren, seperti remote control, menginstal aplikasi, screenshot, logcat, menjalankan perintah shell, dan memiliki akses penuh untuk adb. Singkatnya, apa yang bisa kita lakukan di mobile device berbentuk fisik, bisa juga dilakukan di STF menggunakan browser.</p>
+<p>Berikut adalah sedikit contoh dari ke-kerenan openSTF. Silahkan kunjungi <a href="https://openstf.io/">https://openstf.io</a> untuk info yang lebih mendetail.</p>
+<ul>
+<li>OS support</li>
+<li>Android</li>
+<li>Supports versions 2.3.3 (SDK level 10) to 9.0 (SDK level 28)</li>
+<li>Supports Wear 5.1 (but not 5.0 due to missing permissions)</li>
+<li>Supports Fire OS, CyanogenMod, and other heavily Android based distributions</li>
+<li><code>root</code> is <strong>not</strong> required for any current functionality</li>
+<li>Remote control any device from your browser</li>
+<li>Real-time screen view</li>
+<li>Refresh speed can reach 30–40 FPS depending on specs and Android version. See <a href="https://github.com/openstf/minicap">minicap</a> for more information.</li>
+<li>Rotation support</li>
+<li>Supports typing text from your own keyboard</li>
+<li>Supports meta keys</li>
+<li>Copy and paste support (although it can be a bit finicky on older devices, you may need to long-press and select paste manually)</li>
+<li>May sometimes not work well with non-Latin languages unfortunately.</li>
+<li>Multitouch support on touch screens via <a href="https://github.com/openstf/minitouch">minitouch</a>, two finger pinch/rotate/zoom gesture support on regular screens by pressing <code>Alt</code> while dragging</li>
+<li>Drag &amp; drop installation and launching of <code>.apk</code> files</li>
+<li>Launches main launcher activity if specified in the manifest</li>
+<li>Reverse port forwarding via <a href="https://github.com/openstf/minirev">minirev</a></li>
+<li>Access your local server directly from the device, even if it’s not on the same network</li>
+<li>Open websites easily in any browser</li>
+<li>Installed browsers are detected in real time and shown as selectable options</li>
+<li>Default browser is detected automatically if selected by the user</li>
+<li>Execute shell commands and see real-time output</li>
+<li>Display and filter device logs</li>
+<li>Use <code>adb connect</code> to connect to a remote device as if it was plugged in to your computer, regardless of <a href="http://developer.android.com/tools/help/adb.html">ADB</a> mode and whether you&rsquo;re connected to the same network</li>
+<li>Run any <code>adb</code> command locally, including shell access</li>
+<li><a href="http://developer.android.com/tools/studio/index.html">Android Studio</a> and other IDE support, debug your app while watching the device screen on your browser</li>
+<li>Supports <a href="https://developer.chrome.com/devtools/docs/remote-debugging">Chrome remote debug tools</a></li>
+<li>File Explorer to access device file system</li>
+<li>Experimental VNC support (work in progress)</li>
+<li>Manage your device inventory</li>
+<li>See which devices are connected, offline/unavailable (indicating a weak USB connection), unauthorized or unplugged</li>
+<li>See who’s using a device</li>
+<li>Search devices by phone number, IMEI, ICCID, Android version, operator, product name and/or many other attributes with easy but powerful queries</li>
+<li>Show a bright red screen with identifying information on a device you need to locate physically</li>
+<li>Track battery level and health</li>
+<li>Rudimentary Play Store account management</li>
+<li>List, remove and add new accounts (adding may not work on all devices)</li>
+<li>Display hardware specs</li>
+<li>Simple REST <a href="https://github.com/openstf/stf/blob/master/doc/API.md">API</a></li>
+</ul>
+<p><img src="/img/1__R__QAAq5Zer23Fb__Dyl__hcQ.png" alt="">
+<img src="/img/1__ifaXDDKCG1JtF4PUJ6um9Q.png" alt=""></p>
+<p>Berikut juga adalah beberapa penampakan yang gambarnya saya ambil dari <a href="https://tech.mercari.com">https://tech.mercari.com</a>.</p>
+<p><img src="/img/1__eOMtMuB__LY06kV5r2SQzBg.png" alt="">
+<img src="/img/1__pna6p__cY__w0BcnTyKR3XmA.jpeg" alt=""></p>
+<h3 id="arsitektur">Arsitektur</h3>
+<p>Arsitektur STF ini menggunakan microservices. Beberapa services yang independen berkomunikasi dengan satu sama lain lewat <a href="http://zeromq.org/">ZeroMQ</a> dan <a href="https://github.com/google/protobuf">Protocol Buffer</a>. Tidak seperti web services biasanya yang hanya client side dan server side, STF mempunyai satu bagian lagi yaitu bagian device. Jadi arsitektur STF adalah sebagai berikut:</p>
+<ul>
+<li>Device Side</li>
+<li>Server Side</li>
+<li>Client Side</li>
+</ul>
+<p><img src="/img/1__LvOckD5LUu2YT4Ry2s3CnQ.png" alt=""></p>
+<h3 id="device-side">Device Side</h3>
+<p>Untuk menangkap layar dan men-trigger event touch Android, STF menggunakan <a href="https://github.com/openstf/minicap">minicap</a> and <a href="https://github.com/openstf/minitouch">minitouch</a> yang berjalan di dalam device dan open socket. Sekaligus mengirimkan data antara server side dengan device side melalui adb.</p>
+<p>STF juga menggunakan <a href="https://github.com/openstf/STFService.apk">STFService.apk</a> di mobile devicenya yang mana apk tersebut berjalan di background sebagai <a href="https://developer.android.com/guide/components/services.html">Android Service</a>. Service ini menyediakan socket API untuk memantau dan melakukan berbagai aksi di device tersebut. Server side berkomunikasi dengan STFService.apk melalui adb menggunakan Protocol Buffer.</p>
+<h3 id="server-side">Server Side</h3>
+<p>Server side terdiri dari berbagai microservices berbasis <a href="https://nodejs.org/en/">NodeJS</a>. Service-service ini berkomunikasi satu sama lain menggunakan ZeroMQ.</p>
+<h3 id="client-side">Client Side</h3>
+<p>STF client side diimplementasikan menggunakan AngularJS. Kebanyakan komunikasi antara client side dan server side dilakukan melalui websocket.</p>
+<h3 id="deployment-requirements">Deployment Requirements</h3>
+<ul>
+<li>Physical machines where the devices are connected should have CoreOS or (any Linux based OS)</li>
+<li>All machines should have static IP</li>
+<li>Port Range (15000 ~ 25000) for all machines should be open to all users</li>
+<li>Docker &amp; Systemd are available on each machine</li>
+</ul>
+<h3 id="cara-install">Cara Install</h3>
+<p><a href="https://github.com/thinkhy/deploy-stf-docker" title="https://github.com/thinkhy/deploy-stf-docker"><strong>thinkhy/deploy-stf-docker</strong><br>
+_You can&rsquo;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or…_github.com</a><a href="https://github.com/thinkhy/deploy-stf-docker"></a></p>
+<p>Diatas saya lampirkan link untuk menginstal STF dengan menjalankan satu script saja. Didalam script tersebut terdapat command untuk menginstal adb, menginstal docker, pull image STF,RethinkDB, dan Nginx. Jadi STF kita akan berjalan diatas Nginx web server.</p>
+<p>Kalian tinggal mengklon saja repositori diatas lalu edit deploy_stf.sh, ubah IP Address di dalam script menjadi IP Static kalian. Tetapi disini saya akan mencontohkan mendirikan openSTF di jaringan lokal menggunakan OS Debian Buster.</p>
+<p><img src="/img/1__zbnbIgnzRnQqp2IHpo__L2g.png" alt="">
+<img src="/img/1__4NvGq7wj____VgQ67sJ8AGSA.png" alt=""></p>
+<p>Setelah di save, kita tinggal ketikkan command ./deploy_stf.sh maka openSTF akan diinstal dan akan langsung bisa digunakan. Jika terjadi kesalahan mohon cek list process status container dockernya. Pastikan semua container dalam status up, kecuali stf-migrate.</p>
+<p><img src="/img/1____x2Uh1r5s3awu9DGaVpmyQ.png" alt=""><img src="/img/1__vXGtHHxWo8Zwdh__1ni8UuQ.png" alt=""></p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Jika kalian mengalami device di web kalian terus-terusan dalam mode disconnected, dimohon kalian mencoba mematikan firewall.</li>
+</ul>
+<h4 id="menambahkan-devicexiaomi">Menambahkan device Xiaomi</h4>
+<p>Kalau untuk device Xiaomi, ada beberapa langkah tambahan yang harus dilakukan. Berikut diantaranya:</p>
+<ol>
+<li>Mengaktifkan <strong>Developer options</strong>, untuk mengaktifkannya cukup pergi ke <strong>Settings</strong> → <strong>About phone</strong> dan tap bagian <strong>MIUI version</strong> sampai mode developer aktif.</li>
+<li>Pergi ke <strong>Settings</strong> → <strong>Mi Account</strong> dan buatlah akun MI, atau login jika sudah punya.</li>
+<li>Buka <strong>Settings</strong> → <strong>Additional settings</strong> → <strong>Developer options</strong>. Aktifkan <strong>USB debugging</strong> (untuk akses ADB), <strong>Install via USB</strong> (dibutuhkan untuk instal STFService.apk) dan <strong>USB debugging (Security settings)</strong> (untuk menjalankan minitouch). Kalian harus punya akun MI untuk mengaktifkan <em>USB debugging (Security settings)</em>.</li>
+</ol>
+<ul>
+<li>Note: Ada beberapa versi MIUI yang mengharuskan device untuk memasang SIM card.</li>
+</ul>
+<p>4. Koneksikan device dengan PC. Izinkan ADB key dan pilih “Selalu izinkan.”</p>
+<p>5. Jalankan STF. Akan muncul dialog pop up di device untuk menginstal <code>STFService</code>. Kalian harus mengizinkan instalasti tersebut.</p>
+<p>6. Jika STF gagal dijalankan setelah instalasi <code>STFService.apk</code>, coba buka <strong>Settings</strong> → <strong>Permissions</strong> → <strong>Autostart</strong> dan aktfikan <code>STFService</code>.</p>
+<p>7. Sekarang harusnya device sudah aktif di STF.</p>
+<p>Sekian dan terima kasih.</p>
+</article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<div class="utterances"></div>
+
+<script>
+    var systemThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    var systemTheme = systemThemeMediaQuery.matches ? 'dark' : 'light';
+    var utterancesTheme = systemTheme === 'dark' ? 'github-dark' : 'github-light';
+    var utterancesScript = document.createElement('script');
+    utterancesScript.src = 'https://utteranc.es/client.js';
+    utterancesScript.setAttribute('repo', 'fauzanjantung\/fauzanjantung.github.io');
+    utterancesScript.setAttribute('issue-term', 'title');
+    utterancesScript.setAttribute('theme', utterancesTheme);
+    utterancesScript.setAttribute('crossorigin', 'anonymous');
+    utterancesScript.setAttribute('async', '');
+    document.querySelector('.utterances').appendChild(utterancesScript);
+</script>
+<noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  <div class="footer container-lg width-full p-responsive" role="contentinfo">
+    <div
+        class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+            <li class="mr-3 mr-lg-0">© 2019. Theme by <a href="https://github.com/MeiK2333/github-style"><span>github-style</span></a></a></li>
+        </ul>
+
+        <a aria-label="Homepage" title="Fauzan Fathurrahman" class="footer-octicon d-none d-lg-block mx-lg-4"
+            href="https://fauzanjantung.github.io/">
+            <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                </path>
+            </svg>
+        </a>
+        <ul
+            class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        </ul>
+    </div>
+    <div class="d-flex flex-justify-center pb-6">
+        <span class="f6 text-gray-light"></span>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="https://fauzanjantung.github.io/js/frameworks.js"></script>
+
+<script crossorigin="anonymous"
+    type="application/javascript" src="https://fauzanjantung.github.io/js/github-bootstrap.js"></script>
+<script src="https://fauzanjantung.github.io/js/stop.js"></script>
+<script src="https://fauzanjantung.github.io/js/contributions.js"></script>
+
+</body>
+
+</html>

@@ -6,14 +6,32 @@
     <description>Recent content on Fauzan Fathurrahman</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>© 2019. Theme by &lt;a href=&#34;https://github.com/MeiK2333/github-style&#34;&gt;&lt;span&gt;github-style&lt;/span&gt;&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 26 Nov 2020 21:05:20 +0700</lastBuildDate><atom:link href="https://fauzanjantung.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 15:21:28 +0700</lastBuildDate><atom:link href="https://fauzanjantung.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Portfolio</title>
-      <link>https://fauzanjantung.github.io/posts/portfolio/</link>
+      <title>Portfolio As Game Developer</title>
+      <link>https://fauzanjantung.github.io/posts/others/</link>
+      <pubDate>Wed, 30 Dec 2020 15:21:28 +0700</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/others/</guid>
+      <description>Hello! This post is a list of my portfolio as a Game and Mobile Developer</description>
+    </item>
+    
+    <item>
+      <title>Portfolio As Web Developer</title>
+      <link>https://fauzanjantung.github.io/posts/as-web-developer/</link>
+      <pubDate>Wed, 30 Dec 2020 15:21:16 +0700</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/as-web-developer/</guid>
+      <description>Hello! This post is a list of my portfolio as a Web Developer</description>
+    </item>
+    
+    <item>
+      <title>Portfolio as Quality Assurance</title>
+      <link>https://fauzanjantung.github.io/posts/as-quality-assurance/</link>
       <pubDate>Thu, 26 Nov 2020 21:05:20 +0700</pubDate>
       
-      <guid>https://fauzanjantung.github.io/posts/portfolio/</guid>
-      <description>Hello! This post is a list of my portfolio as a QA and as a Developer</description>
+      <guid>https://fauzanjantung.github.io/posts/as-quality-assurance/</guid>
+      <description>Hello! This post is a list of my portfolio as a Quality Assurance</description>
     </item>
     
     <item>
@@ -23,6 +41,98 @@
       
       <guid>https://fauzanjantung.github.io/about/</guid>
       <description>こんにちは。フォーザンです。</description>
+    </item>
+    
+    <item>
+      <title>Portfolio as Chatbot Developer</title>
+      <link>https://fauzanjantung.github.io/posts/as-chatbot-developer/</link>
+      <pubDate>Wed, 25 Nov 2020 21:05:20 +0700</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/as-chatbot-developer/</guid>
+      <description>Hello! This post is a list of my portfolio as a Chatbot Developer</description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>https://fauzanjantung.github.io/posts/portfolio/</link>
+      <pubDate>Tue, 24 Nov 2020 21:05:20 +0700</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/portfolio/</guid>
+      <description>Hello! This post is a list of my portfolio</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Penggunaan Katalon Studio untuk project Web Api</title>
+      <link>https://fauzanjantung.github.io/posts/tutorial-penggunaan-katalon-studio-untuk-project-web-api/</link>
+      <pubDate>Thu, 07 May 2020 11:45:32 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/tutorial-penggunaan-katalon-studio-untuk-project-web-api/</guid>
+      <description>Apa itu Web API? Kepanjangan dari API adalah Application Programming Interface, API berfungsi sebagai perantara Software (Perangkat Lunak) yang memungkinkan 2 (Dua) Application (Aplikasi) untuk saling berkomunikasi.
+Kenapa harus melakukan API Testing? Jika API yang kita buat tidak stabil atau mengembalikan data yang salah, maka di aplikasi kita juga pasti akan menampilkan data yang salah. Jika API yang kita buat tidak berfungsi dengan baik, maka aplikasi kita juga akan tidak berfungsi dengan baik.</description>
+    </item>
+    
+    <item>
+      <title>Localization Dengan Mudah di Laravel</title>
+      <link>https://fauzanjantung.github.io/posts/localization-dengan-mudah-di-laravel/</link>
+      <pubDate>Thu, 07 May 2020 11:34:18 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/localization-dengan-mudah-di-laravel/</guid>
+      <description>Apa itu Localization? Menurut Wikipedia, Localization adalah proses mengadaptasi situs web yang ada dengan bahasa dan budaya lokal di pasar sasaran. Ini adalah proses mengadaptasi situs web ke dalam konteks bahasa dan budaya yang berbeda — yang melibatkan lebih dari sekadar terjemahan teks yang sederhana.
+Kenapa Localization Itu Penting? Dilansir dari https://medium.com/@Shakti_Enterprise, Ada beberapa alasan kenapa Localization itu penting, diataranya :
+ Jangkauan Global:  Internet tidak terbatas pada area atau wilayah tertentu.</description>
+    </item>
+    
+    <item>
+      <title>Desktop Test Automation Menggunakan SeeShell</title>
+      <link>https://fauzanjantung.github.io/posts/desktop-test-automation-menggunakan-seeshell/</link>
+      <pubDate>Fri, 17 Apr 2020 03:01:54 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/desktop-test-automation-menggunakan-seeshell/</guid>
+      <description>Hai teman-teman. Di artikel kali ini saya akan membahas suatu software untuk desktop automation. Software ini sebenarnya masih belum dewasa tetapi punya potensi.
+Nama softwarenya SeeShell, nama ini konon terinspirasi dari indahnya Seashells yang artinya kerang laut, dan dari hebatnya Shell Script. Seeshell ini menerapkan image-driven scripting untuk automation aplikasi desktop di Windows.
+Dengan Seeshell API, kita bisa mengkombinasikan SeeShell dengan bahasa pemrograman dan bahasa scripting lain semacam PowerShell, C#, Java, Visual Basic atau VBA.</description>
+    </item>
+    
+    <item>
+      <title>Mobile Test Automation dan Cucumber BDD di Katalon</title>
+      <link>https://fauzanjantung.github.io/posts/mobile-test-automation-cucumber-bdd-di-katalon/</link>
+      <pubDate>Tue, 03 Sep 2019 22:59:12 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/mobile-test-automation-cucumber-bdd-di-katalon/</guid>
+      <description>Halo, selamat pagi/siang/sore/malam kawan-kawan. Semoga kalian sehat dan sukses selalu. Di artikel ini saya akan membuat tutorial Test Automation di Katalon menggunakan cucumber BDD. Kalau ada yang belum tau tentang BDD, bisa baca-baca dulu di https://en.wikipedia.org/wiki/Behavior-driven_development. Kalian sebaiknya mencoba BDD karena sungguh, ini sangat membantu sekali. Banyak raksasa-raksasa IT juga yang sudah menggunakan BDD.
+Apalagi sekarang ada Cucumber, tools yang digunakan untuk mendukung BDD. Untuk memahami Cucumber, kalian harus paham dulu tentang syntax Gherkin.</description>
+    </item>
+    
+    <item>
+      <title>Mencari Akun Sosmed Menggunakan Sherlock</title>
+      <link>https://fauzanjantung.github.io/posts/mencari-akun-sosmed-menggunakan-sherlock/</link>
+      <pubDate>Mon, 19 Aug 2019 02:26:00 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/mencari-akun-sosmed-menggunakan-sherlock/</guid>
+      <description>Apakah kalian tau apa itu Sherlock? Ya betul, Sherlock adalah tokoh utama dari cerita detektif karangan Sir Arthur Conan Doyle. Sherlock berasal dari Inggris, dan dia sangat jago dalam deduksi. The Science of Deduction. Dia juga bisa tau kehidupan/kepribadian seseorang hanya dengan melihat penampilannya saja.
+Nah tapi, yang saya share di artikel ini bukan cerita Sherlock Holmes, namun sebuah tools untuk mencari akun sosial media. Tools ini diprogram dalam bahasa Python.</description>
+    </item>
+    
+    <item>
+      <title>Steganografi Menggunakan Steghide</title>
+      <link>https://fauzanjantung.github.io/posts/steganografi-menggunakan-steghide/</link>
+      <pubDate>Mon, 12 Aug 2019 07:48:52 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/steganografi-menggunakan-steghide/</guid>
+      <description>Apa itu Steganografi? Menurut mas Wikipedia, Steganografi adalah seni dan ilmu menulis pesan tersembunyi atau menyembunyikan pesan dengan suatu cara sehingga selain si pengirim dan si penerima, tidak ada seorangpun yang mengetahui atau menyadari bahwa ada suatu pesan rahasia. Sebaliknya, kriptografi menyamarkan arti dari suatu pesan, tapi tidak menyembunyikan bahwa ada suatu pesan. Kata “steganografi” berasal dari bahasa Yunani steganos, yang artinya “tersembunyi atau terselubung”, dan graphein, “menulis”.
+Nah, di tulisan ini kita akan belajar cara untuk menyisipkan sebuah informasi ke dalam sebuah gambar.</description>
+    </item>
+    
+    <item>
+      <title>Mendirikan Device Farm Menggunakan OpenSTF</title>
+      <link>https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/</link>
+      <pubDate>Fri, 09 Aug 2019 02:12:30 +0000</pubDate>
+      
+      <guid>https://fauzanjantung.github.io/posts/mendirikan-device-farm-menggunakan-openstf/</guid>
+      <description>Selamat pagi/siang/sore/malam teman. Semoga kalian sehat dan sukses selalu. Saya ucapkan selamat datang. Mungkin beberapa dari kalian sudah tahu apa itu Device Farm, dan mungkin beberapa dari kalian juga belum tahu apa itu Device Farm, jadi mari kita belajar bersama-sama.
+Disini saya mengacu ke tulisan di https://tech.mercari.com. Tulisan disana keren-keren. Jika ilmu ibarat ikan, maka https://tech.mercari.com ibarat sungai. Kita bisa mendapatkan banyak ikan disana.
+Mercari Engineering Blog
+_We&amp;rsquo;re the software engineers behind Mercari.</description>
     </item>
     
   </channel>
